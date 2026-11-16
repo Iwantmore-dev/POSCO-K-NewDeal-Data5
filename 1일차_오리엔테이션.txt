@@ -102,3 +102,12 @@ github에서도 커밋이 가능함. hello.txt에 4번째 줄에 메시지를 �
 vscode로도 수정한 다음 커밋과 커밋 메시지 작성이 가능함. source control에서 가능.
 
 git push -u에 대한 설명은 추후 확인 더 필요함.
+git push origin main 를 하면 origin이라는 저장소에 main을 업로드함.
+
+하지만 이후에도 업로드할 목적지를 명시해야 할 수 있음.
+
+반대로 다음처럼 입력하면
+git push -u origin main
+Git은 업로드와 동시에 로컬 main 브랜치가 원격의 main 브랜치를 추적하도록 설정함.
+
+git pull -u origin main은 오류가 날거임 : git pull에는 -u 지원을 하지 않기 때문.
