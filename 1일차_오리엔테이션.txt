@@ -1,0 +1,104 @@
+1일차_오리엔테이션
+
+자기소개를 짧게 진행하였음. 여러 분야의 이공계 종사자들 혹은 졸업자들이었음.
+일부는 취업한 경험도 있고 석사출신 or 학부연구생 도 있었음.
+
+대부분 ai 중요성으로 지원하게 되었다는 내용임.
+
+오늘은 설치 및 작게 진행할 예정.
+
+단축키 존재. 파이썬 설치완료, vscode에서 파이썬과 코랩 환경을 설정함.
+실행 정상 여부 체크 : 정상 완료.
+
+코랩,vscode py 확장자. ipynb확장자로 결과를 확인하는 과제 실습1.
+
+
+깃허브의 커밋목록으로 증빙자료처럼 사용가능
+
+
+git bash 에서 주로 사용하는 명령어
+$ git init > git을 사용하겠다는 명령어
+실행하면 폴더 내에 숨김폴더 .git/ 이 생기고 여기에 모든 변경 이력이 저장됨
+변경 이력 관맇해줌. 삭제나 수정 하면 안됨
+
+empty는 아직 커밋이 하나도 없는 빈 저장소라는 의미.
+
+git의 상태가 있음
+untracked : git이 아직 모르는 새 파일.
+
+start.py나 test.py 같은 파일들을 gitadd라는 명령으로 git에 올릴 수 있음.
+기본적으로 미설정 상태고 미추적 untracked 상태임.
+
+gitadd이후에는 staged 상태가 됨.
+staged는 git이 변경사항을 관리하는 파일
+git commit이라는 명령으로 커밋(설정 저장)하고 committed상태가 됨.
+
+committed하면 메시지를 쓰라고 함. 변경 내역을 알리기 위한 메시지 추가임.
+
+modified는 수정사항이 발생했을때.
+
+cd는 change directory의 약자. 디렉토리 변경을 위해 사용
+기본적으로 git bash를 사용하는 경우 최상위 폴더 기준으로 잡히기 때문에
+디렉토리를 변경해야함. 바탕화면에 git test폴더를 만들고 git bash를 통해서 cd "C:\Users\bin63\OneDrive\바탕 화면\git test"로 변경하였음.
+변경 후 git init으로 리포지토리(일종의 폴더)를 형성하였고, git test에서 .git이 생성됨을 확인하였음.
+
+
+git test폴더에 실제로 hello.txt파일을 만들고 git bash에서 git status로 커밋, 언트랙티드 확인하였음.
+hello2.txt파일을 형성하고 다시 git status로 확인하였음.
+
+staged상태로 만들기 위해 git add로 staged상태로 만들려고함. 한번에 다 staged로 만들 수 있고 특정 파일만 staged가능.
+
+git add hello.txt로 하나만 staged상태로 변환
+변경 후 git bash에서 hello.txt가 changes to be committed로 변환됨을 확인함.
+git add . 으로도 가능 단, 이번에는 하위 파일 전체가 staged가 됨.
+전체 파일들이 staged됨을 확인함.
+
+커밋을 시킬것임. 반드시 add 이후 commit을 해야함.
+git commit 으로 커밋. 변경내용에 대한 메시지도 남겨야함(반드시)
+즉, git commit -m "보낼 메시지" 의 형태가 됨.
+git commit -m " hellow.txt, hellow2.txt 두 개 파일 생성"으로 커밋함
+
+git status에서 nithing to commit이 나왔음. 정상적으로 작동한 상태임.
+
+hello.txt파일을 실제로 수정한 다음 status를 확인 해보니  modified 상태로 변환됨. status에서는 초록 모디파이드 상태가 됨(스테이지드 상태)
+git add와 커밋으로 수정된 파일 커밋까지 완료
+git log로 변경 내역 볼 수 있음. 아래부터 오래된 커밋임.
+
+
+좋은 커밋 메시지를 쓰는것도 중요함. 입문 단계에서는 동사 + 대상 의 형태로 작성하는것을 추천함.
+
+.gitignore는 추적을 제외하는 파일 설정임. api key 설정할때 사용했던 기억이 남.
+데이터가 너무 크거나 필요하지만 보안상의 이유로 추적을 시킬 수는 없을때 gitignore를 사용
+.env : 파일
+.ipynb_checkpoints/ : 폴더
+_pycache_/ : 폴더
+data/*.csv : 전체 파일중 csv확장자만 무시
+
+
+git은 컴퓨터의 버전 관리 도구라면 github는 git저장소를 올려주는 플랫폼임.
+git을 github에 업로드 하는것을 push, github에서 작업물을 가져오는것을 pull이라고 함.
+
+팀원과의 협업시 github를 사용하게 될 것임.
+github의 폴더를 repository라고 하는데 push를 통해서 컴퓨터의 폴더를 repository와 연결할것임.
+
+커밋한다고 자동으로 github에 올라가지는 않음. 반드시 git push실행 필요. github에서 수정 한 경우에는 반드시 git pull 필요함.
+두 저장소를 push와 pull로 동기화가 필요함.
+
+git remote add origin https://github.com/Iwantmore-dev/git_test_start.git
+이것이 원격으로 연결시키는 명령어임.
+git remote -v 를 사용하면 아무것도 나오지 않지만 git test라는 폴더와 어떤 원격 주소와 연결되어있는지 알려주는 명령어이다. git repository와 아직 연결되지 않았으므로 비어있다.
+
+git remote add origin 이후 -v를 사용하면 주소가 나오는것을 확인하였다.
+
+git test폴더에 hellow3.txt를 만들고  add와 commit는 하지 않았음.
+이 상태로 git push를 통해서 git hub에 올려보겠다.
+
+git push origin main ; commit된 내용을 origin의 main branch에 올려주는것.
+커밋하지 않은 hellow3를 제외한 나머지들이 github에 올라간 것을 확인하였음.
+
+git add . >> git commit -m "github repository 생성 후 push 확인 을 위한 작업" >>> git push origin main 으로 3번 txt파일도 업로드 하였음.
+
+github에서도 커밋이 가능함. hello.txt에 4번째 줄에 메시지를 추가한 다음 커밋하였음.
+vscode로도 수정한 다음 커밋과 커밋 메시지 작성이 가능함. source control에서 가능.
+
+git push -u에 대한 설명은 추후 확인 더 필요함.
