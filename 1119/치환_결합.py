@@ -92,4 +92,32 @@ print(line)
 prac4 = '1, NORMAL ,25.3'
 prac4 = prac4.split(',') #스플릿 되어 리스트형태가 되었음.prac4
 print(prac4[1].strip().lower())
+print(line)
+'''
+1. text = "   PyThOn   " ->"python"
 
+2. phone = "  010 - 1234 - 5678  " -> "01012345678"
+
+3. name = "   kIM    cHUL   sOO   " -> "Kim Chul Soo"
+
+4. filename = "  Sensor Data 2026.CSV  " -> "sensor_data_2026.csv"
+
+5. data = "TEMP----PRESSURE----STATUS" -> "TEMP-PRESSURE-STATUS"
+'''
+
+#1. text = "   PyThOn   " ->"python"
+text = "   PyThOn   " # ->"python"
+print(text.strip().lower())
+#2. phone = "  010 - 1234 - 5678  " -> "01012345678"
+phone = "  010 - 1234 - 5678  "
+print(phone.replace(" ","").replace("-",""))
+#3. name = "   kIM    cHUL   sOO   " -> "Kim Chul Soo"
+name = "   kIM    cHUL   sOO   "
+print(' '.join(name.title().split())) #Kim Chul Soo
+#4.filename = "  Sensor Data 2026.CSV  " -> "sensor_data_2026.csv"
+filename = "  Sensor Data 2026.CSV  "
+print('_'.join((filename.lower()).split()))
+
+#5. data = "TEMP----PRESSURE----STATUS" -> "TEMP-PRESSURE-STATUS"
+data = "TEMP----PRESSURE----STATUS"
+print(data.replace("----", "-"))
