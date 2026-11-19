@@ -15,6 +15,7 @@ prob1 = 'NORMAL-WARNING-NORMAL-ERROR-WARNING'
 
 first = prob1.find('WARNING')        # 7
 second = prob1.find('WARNING', 8)    # 28
+#rfind로도 찾을 수 있다.
 
 print(second - (first + len('WARNING'))) #14
 #7.두 WARNING 사이에 들어있는 문자열만 추출
