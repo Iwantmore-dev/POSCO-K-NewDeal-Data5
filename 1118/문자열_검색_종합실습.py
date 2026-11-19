@@ -19,7 +19,7 @@ second = prob1.find('WARNING', 8)    # 28
 
 print(second - (first + len('WARNING'))) #14
 #7.두 WARNING 사이에 들어있는 문자열만 추출
-middle = prob1[first + len('warning'): second]
+middle = prob1[first + len('warning'): second] #prob1[:] 슬라이싱인데 시작위치와 마무리 위치까지기를 fist와 len으로, second로 한것.
 print(middle) #-NORMAL-ERROR-
 
 #8.7번에서 추출한 문자열에 ERROR가 포함되어있는가?
